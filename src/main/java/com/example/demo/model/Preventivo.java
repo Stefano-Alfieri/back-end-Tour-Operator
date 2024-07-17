@@ -17,7 +17,7 @@ public class Preventivo {
 	private boolean minore;
 	private int nGiorni;
 	
-	@OneToOne
+	/*@OneToOne
 	@JoinColumn(name="destinazione_id")
 	private Destinazione destinazione;
 	
@@ -26,7 +26,7 @@ public class Preventivo {
 	
 	@JoinColumn(name="sistemazione_id")
 	private Sistemazione sistemazione;
-
+*/
 	public Long getId() {
 		return id;
 	}
@@ -59,7 +59,7 @@ public class Preventivo {
 		this.nGiorni = nGiorni;
 	}
 
-	public Destinazione getDestinazione() {
+/*	public Destinazione getDestinazione() {
 		return destinazione;
 	}
 
@@ -83,5 +83,5 @@ public class Preventivo {
 		this.sistemazione = sistemazione;
 	}
 	
-	
+	*/
 }

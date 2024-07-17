@@ -11,7 +11,7 @@ import com.example.demo.model.Preventivo;
 import com.example.demo.repository.PreventivoRepository;
 
 @RestController
-@RequestMapping
+@RequestMapping("/preventivi")
 public class PreventivoController {
 
 	@Autowired

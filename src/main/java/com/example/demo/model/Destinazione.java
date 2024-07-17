@@ -14,7 +14,7 @@ public class Destinazione {
 	private String titoloDestinazione;
 	private String continente;
 	private String descrizione;
-	private float prezzo;
+	private Float prezzo;
 
 	public Long getId() {
 		return id;
@@ -40,10 +40,10 @@ public class Destinazione {
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	public float getPrezzo() {
+	public Float getPrezzo() {
 		return prezzo;
 	}
-	public void setPrezzo(float prezzo) {
+	public void setPrezzo(Float prezzo) {
 		this.prezzo = prezzo;
 	}
 }
