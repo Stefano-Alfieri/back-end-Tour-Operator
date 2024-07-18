@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import com.example.demo.model.Destinazione;
 import com.example.demo.model.Partenza;
 import com.example.demo.repository.PartenzaRepository;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/partenze")
 public class PartenzaController {
@@ -32,7 +34,7 @@ public class PartenzaController {
 	}
 
 	// ottieni singola partenza
-	@GetMapping("{id}")
+	@GetMapping("/{id}")
 	public Partenza getPartenzaById(@PathVariable Long id) {
 		return partenzaRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Id non trovato"));
 	}
