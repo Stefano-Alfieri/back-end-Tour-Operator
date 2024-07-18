@@ -22,3 +22,4 @@ public class PreventivoController {
 		return preventivoRepository.findAll();
 	}
 }
+ 
