@@ -71,7 +71,7 @@ public class DestinazioneController {
 		destinazione.setTitoloDestinazione(destinazioneDett.getTitoloDestinazione());
 		destinazione.setPrezzo(destinazioneDett.getPrezzo());
 		destinazione.setContinente(destinazioneDett.getContinente());
-		destinazione.setDescrizione(destinazioneDett.getContinente());
+		destinazione.setDescrizione(destinazioneDett.getDescrizione());
 		return destinazioneRepository.save(destinazione);
 	}
 
