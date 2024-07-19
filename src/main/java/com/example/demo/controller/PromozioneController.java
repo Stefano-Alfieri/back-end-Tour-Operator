@@ -45,6 +45,7 @@ public class PromozioneController {
 		Promozione promozione = promozioneRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Id non trovato"));
 		promozione.setTitoloPromo(promozioneDett.getTitoloPromo());
 		promozione.setDescrizionePromo(promozioneDett.getDescrizionePromo());
+		promozione.setUrlFoto(promozioneDett.getUrlFoto());
 		return promozioneRepository.save(promozione);
 	}
 	//elimina promozione

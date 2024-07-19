@@ -10,6 +10,8 @@ public class Partenza {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	private String nome;
+	private float prezzo;
 	
 	public Long getId() {
 		return id;
@@ -17,8 +19,7 @@ public class Partenza {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	private String nome;
-	private float prezzo;
+
 	
 	public String getNome() {
 		return nome;

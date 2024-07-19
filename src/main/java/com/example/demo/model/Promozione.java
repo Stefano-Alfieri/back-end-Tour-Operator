@@ -12,7 +12,16 @@ public class Promozione {
 	
 	private String titoloPromo;
 	private String descrizionePromo;
+	private String urlFoto;
 	
+	
+	
+	public String getUrlFoto() {
+		return urlFoto;
+	}
+	public void setUrlFoto(String urlFoto) {
+		this.urlFoto = urlFoto;
+	}
 	public Long getId() {
 		return id;
 	}
