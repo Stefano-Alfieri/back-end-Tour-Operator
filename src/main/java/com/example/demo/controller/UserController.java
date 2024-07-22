@@ -49,4 +49,19 @@ public class UserController {
 	            throw new UnauthorizedException();
 	        }
 	    }
+	   
+	   @GetMapping("/Admin")
+	   public List<User> getAllAdmin(@RequestHeader("Authorization") String token){
+		   Token authToken = tokenService.findByToken(token);
+	        if (authToken != null) {
+	            User user = userService.findById(authToken.getUserId()).orElseThrow(() -> new UnauthorizedException());
+	            if ("ADMIN".equals(user.getRuolo())) {
+	                return userService.findByRuolo("ADMIN");
+	            } else {
+	                throw new UnauthorizedException();
+	            }
+	        } else {
+	            throw new UnauthorizedException();
+	        }
+	   }
 }

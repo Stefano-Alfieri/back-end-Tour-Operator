@@ -26,4 +26,8 @@ public class UserService {
 		public Optional<User> findById(Long userId) {
 			 return userRepository.findById(userId);
 		}
+		
+		public List<User> findByRuolo(String ruolo){
+			return userRepository.findByRuolo("ADMIN");
+		}
 }
