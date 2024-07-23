@@ -28,6 +28,6 @@ public class UserService {
 		}
 		
 		public List<User> findByRuolo(String ruolo){
-			return userRepository.findByRuolo("ADMIN");
+			return userRepository.findByRuolo(ruolo);
 		}
 }

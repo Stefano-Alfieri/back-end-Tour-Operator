@@ -64,4 +64,32 @@ public class UserController {
 	            throw new UnauthorizedException();
 	        }
 	   }
+	   @GetMapping("/Agenzie")
+	   public List<User> getAllAgenzie(@RequestHeader("Authorization") String token){
+		   Token authToken = tokenService.findByToken(token);
+	        if (authToken != null) {
+	            User user = userService.findById(authToken.getUserId()).orElseThrow(() -> new UnauthorizedException());
+	            if ("ADMIN".equals(user.getRuolo())) {
+	                return userService.findByRuolo("AGENZIA");
+	            } else {
+	                throw new UnauthorizedException();
+	            }
+	        } else {
+	            throw new UnauthorizedException();
+	        }
+	   }
+	   @GetMapping("/Utenti")
+	   public List<User> getAllUtenti(@RequestHeader("Authorization") String token){
+		   Token authToken = tokenService.findByToken(token);
+	        if (authToken != null) {
+	            User user = userService.findById(authToken.getUserId()).orElseThrow(() -> new UnauthorizedException());
+	            if ("ADMIN".equals(user.getRuolo())) {
+	                return userService.findByRuolo("USER");
+	            } else {
+	                throw new UnauthorizedException();
+	            }
+	        } else {
+	            throw new UnauthorizedException();
+	        }
+	   }
 }
