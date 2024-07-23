@@ -31,7 +31,7 @@ public class AuthController {
     	User user = userService.findByEmail(authRequest.getEmail());
     	if (user != null && user.getPassword().equals(authRequest.getPassword())) {
     		String token = tokenService.createToken(user.getId()).getToken();
-            return new AuthResponse(token);
+            return new AuthResponse(token, user.getRuolo());
         } else {
             throw new UnauthorizedException();
         }
